@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de advinhação</title>
+    <script src="script.js"></script>
+</head>
+<style>
+    html {
+      font-family: sans-serif;
+    }
+
+    body {
+      width: 50%;
+      max-width: 800px;
+      min-width: 480px;
+      margin: 0 auto;
+    }
+    
+    .form input[type="number"] {
+      width: 200px;
+    }
+
+    .lastResult {
+      color: white;
+      padding: 3px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Jogo de maior ou menor</h1>
+
+  <p>Advinhe se o número vai ser maior ou menor!</p>
+  <div class="button">
+    <button onclick="gerar()"> Gerar</button><br>
+  </div>
+  Número: <div id="nmr"></div>
+
+  <div class="form">
+    <label for="campoPalpite">Digite um palpite: </label>
+    <select id="select">
+        <option value="maior">Maior</option>
+        <option value="menor">Menor</option>
+    </select>
+  </div>
+
+  </div>
+</body>
+</html>
