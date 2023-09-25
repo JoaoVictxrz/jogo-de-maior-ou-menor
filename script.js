@@ -3,18 +3,24 @@ const maior = document.getElementById("maior");
 const menor = document.getElementById("menor");
 const selectElement = document.getElementById('select');
 const pElement = document.getElementById('p');
-// mostrar o número da array
+
+
+// Gera número aleatorio da array e o apaga da array
 function gerar() {
     const numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
     document.getElementById("nmr"); nmr.innerHTML = numeroAleatorio;
-    function remove(){
-       
+    console.log(numeroAleatorio)
+    let index = numeros.indexOf(numeroAleatorio);
+    if (index > -1){
+        numeros.splice(index, 1);
     }
 }
-
+function reinciarJogo(){ 
+    if(numeros >= 0){
+      alert("Parabéns! Você ganhou!");
+    }
+}
 // Pegar o select maior ou menor
 // Verifcar se é maior ou menor
 
 // conferir se continua ou para
-
-// mostrar outro numero da array e excluir o numero anterior da array
