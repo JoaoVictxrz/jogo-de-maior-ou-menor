@@ -1,9 +1,12 @@
 let numeros = [1, 2, 3, 4 ,5 ,6 ,7 ,8 ,9 ,10 ,11 ,12 ,13 ,14 ,15 ,16 ,17 ,18 ,19, 20]
-const maior = document.getElementById("maior");
-const menor = document.getElementById("menor");
-const selectElement = document.getElementById('select');
+let numeroAleatorio;
+let proximoNumero;
+const maiorOuMenor = document.getElementById("maiorOuMenor");
+const numerosAnteriores = document.getElementById('numerosAnteriores');
+const resultado = document.getElementById('resultado');
 const pElement = document.getElementById('p');
-
+let maiorNumero = proximoNumero > numeroAleatorio;
+let menorNumero = proximoNumero < numeroAleatorio;
 
 // Gera número aleatorio da array e o apaga da array
 function gerar() {
@@ -14,13 +17,25 @@ function gerar() {
     if (index > -1){
         numeros.splice(index, 1);
     }
-}
-function reinciarJogo(){ 
-    if(numeros >= 0){
-      alert("Parabéns! Você ganhou!");
+    document.addEventListener('click', numeroInicial)
+ }
+
+ function numeroInicial(){
+    const proximoNumero = numeros[Math.floor(Math.random() *numeros.length)];
+    console.log(proximoNumero);
+    let index = numeros.indexOf(proximoNumero);
+    if (index > -1){
+        numeros.splice(index, 1);
     }
 }
-// Pegar o select maior ou menor
-// Verifcar se é maior ou menor
 
-// conferir se continua ou para
+ function maior(){
+    if (proximoNumero >= numeroAleatorio) {
+        gerar();
+   } else (alert('Você perdeu!'))
+   }
+ function menor(){
+    if (proximoNumero <= numeroAleatorio) {
+        gerar();
+   } else (alert('Você perdeu!'))
+ }
