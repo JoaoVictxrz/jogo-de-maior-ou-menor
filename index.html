@@ -34,18 +34,20 @@
 
   <p>Advinhe se o número vai ser maior ou menor!</p>
   <div class="button">
-    <button onclick="gerar()"> Gerar</button><br>
+    <button onclick="gerar()" id="buttonGerar"> Gerar</button><br>
   </div>
   Número: <div id="nmr"></div>
 
   <div class="form">
-    <label for="campoPalpite">Digite um palpite: </label>
-    <select id="select">
-        <option value="maior">Maior</option>
-        <option value="menor">Menor</option>
-    </select>
+    <label for="campoPalpite">Dê um palpite: </label>
+    <div id="maiorOuMenor">
+        <button onclick="maior()"> Maior</button><br>
+        <button onclick="menor()"> Menor</button><br>
+    </div>
   </div>
-
+  <p class="resultado"></p>
+  <p class="numerosAnteriores"></p>
+  <p class="maiorOuMenor"></p>
   </div>
 </body>
 </html>
