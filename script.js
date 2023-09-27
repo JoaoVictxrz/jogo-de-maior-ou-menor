@@ -1,4 +1,4 @@
-let numeros = [1, 2, 3, 4 ,5 ,6 ,7 ,8 ,9 ,10 ,11 ,12 ,13 ,14 ,15 ,16 ,17 ,18 ,19, 20]
+let numeros = [1, 2, 3, 4 ,5 ,6 ,7 ,8 ,9 ,10 ,11 ,12 ,13 ,14 ,15 ,16 ,17 ,18 ,19, 20, 21, 22]
 let numeroAleatorio;
 let proximoNumero;
 const maiorOuMenor = document.getElementById("maiorOuMenor");
@@ -35,17 +35,21 @@ function gerar() {
    window.location.reload(true);
  }   
 }
+// cria uma função de recomeçar o jogo
+function tentarNovamente(){
+    window.location.reload(true);
+}
 // Se o numero for menor continua, se não alert que perdeu.
  function menor(){
     if (proximoNumero < numeroAleatorio) {
         gerar();
    } else  if (proximoNumero > numeroAleatorio){
     alert('Você perdeu!')
-    window.location.reload(true);}
+    tentarNovamente()}
  }
 
 function verify(){
     if(numeros.length = 0){
-        window.Location.reload(true)
+        tentarNovamente();
     }
 }
