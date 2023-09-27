@@ -5,12 +5,10 @@ const maiorOuMenor = document.getElementById("maiorOuMenor");
 const numerosAnteriores = document.getElementById('numerosAnteriores');
 const resultado = document.getElementById('resultado');
 const pElement = document.getElementById('p');
-let maiorNumero = proximoNumero > numeroAleatorio;
-let menorNumero = proximoNumero < numeroAleatorio;
 
 // Gera número aleatorio da array e o apaga da array
 function gerar() {
-    const numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
+    numeroAleatorio = numeros[Math.floor(Math.random() * numeros.length)];
     document.getElementById("nmr"); nmr.innerHTML = numeroAleatorio;
     console.log(numeroAleatorio)
     let index = numeros.indexOf(numeroAleatorio);
@@ -21,21 +19,33 @@ function gerar() {
  }
 
  function numeroInicial(){
-    const proximoNumero = numeros[Math.floor(Math.random() *numeros.length)];
+    proximoNumero = numeros[Math.floor(Math.random() *numeros.length)];
     console.log(proximoNumero);
     let index = numeros.indexOf(proximoNumero);
     if (index > -1){
         numeros.splice(index, 1);
     }
 }
-
+// Se o numero for maior continua, se não alert que perdeu.
  function maior(){
-    if (proximoNumero >= numeroAleatorio) {
+    if (proximoNumero > numeroAleatorio) {
         gerar();
-   } else (alert('Você perdeu!'))
-   }
+   } else if (proximoNumero<numeroAleatorio)
+   {alert('Você perdeu!')
+   window.location.reload(true);
+ }   
+}
+// Se o numero for menor continua, se não alert que perdeu.
  function menor(){
-    if (proximoNumero <= numeroAleatorio) {
+    if (proximoNumero < numeroAleatorio) {
         gerar();
-   } else (alert('Você perdeu!'))
+   } else  if (proximoNumero > numeroAleatorio){
+    alert('Você perdeu!')
+    window.location.reload(true);}
  }
+
+function verify(){
+    if(numeros.length = 0){
+        window.Location.reload(true)
+    }
+}
